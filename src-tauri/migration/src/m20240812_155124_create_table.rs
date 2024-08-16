@@ -14,12 +14,13 @@ impl MigrationTrait for Migration {
                     .if_not_exists()
                     .col(ColumnDef::new(History::Id).integer().not_null().auto_increment().primary_key())
                     .col(ColumnDef::new(History::Type).integer().not_null())
-                    .col(ColumnDef::new(History::Value).text().null())
-                    .col(ColumnDef::new(History::Search).text().null())
+                    .col(ColumnDef::new(History::Value).text().not_null())
+                    .col(ColumnDef::new(History::Search).text().not_null())
+                    .col(ColumnDef::new(History::Hash).text().not_null())
                     .col(ColumnDef::new(History::Width).integer().null())
                     .col(ColumnDef::new(History::Height).integer().null())
                     .col(ColumnDef::new(History::Size).integer().null())
-                    .col(ColumnDef::new(History::Timestamp).integer().null())
+                    .col(ColumnDef::new(History::Timestamp).integer().not_null())
                     .col(ColumnDef::new(History::TagId).integer().null())
                     .to_owned(),
             )
@@ -63,6 +64,7 @@ enum History {
     Type,
     Value,
     Search,
+    Hash,
     Width,
     Height,
     Size,

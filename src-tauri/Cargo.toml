@@ -30,6 +30,16 @@ window-vibrancy = "0.4.3"
 sys-info = "0.9.1"
 log = "0.4.22"
 tauri-plugin-window-state = { git = "https://github.com/tauri-apps/plugins-workspace", branch = "v1" }
+migration = { path = "migration" }
+sea-orm = { version = "1.0.0", features = [
+    "sqlx-sqlite",
+    "runtime-tokio-rustls",
+    "macros",
+] }
+tokio = "1.39.2"
+url = "2.5.2"
+urlencoding = "2.1.3"
+twox-hash = "1.6.3"
 
 [target."cfg(target_os = \"macos\")".dependencies]
 cocoa = "0.25.0"

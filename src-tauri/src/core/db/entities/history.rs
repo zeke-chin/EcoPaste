@@ -12,10 +12,12 @@ pub struct Model {
     pub value: String,
     #[sea_orm(column_type = "Text", nullable)]
     pub search: String,
+    #[sea_orm(column_type = "Text", nullable)]
+    pub hash: String,
     pub width: Option<i32>,
     pub height: Option<i32>,
     pub size: Option<i32>,
-    pub timestamp: Option<i32>,
+    pub timestamp:i64,
     pub tag_id: Option<i32>,
 }
 
